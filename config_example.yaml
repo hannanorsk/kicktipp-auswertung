@@ -1,0 +1,8 @@
+# Bitte den aktuellen Spieltag eintragen
+spieltag:
+# Bitte das Jahr eintragen, in dem die Saison beginnt (z.B. Saison 2021/2022 --> bitte 2021 eintragen)
+jahr:
+# Bitte den Pfad zu dem Ordner "Kicktipp" eintragen -> in diesem Ordner wird ein Ordner "Auswertungen_Input" und ein Ordner "Auswertungen_Output" erstellt. In "Auswertungen_Input" liegt die Datei `Kürzel_Mannschaft_2021.xlsx` sowie die Kicktipp_Export_CSV-Dateien der jeweiligen Spieltage. In "Auswertungen_Output" werden die vom Programm erstellten Auswertungen (Tabelle, nächste Begegnungen, Ergebnisse des aktuellen Spieltages) abgelegt.
+kicktipp_ordner_pfad:
+
+

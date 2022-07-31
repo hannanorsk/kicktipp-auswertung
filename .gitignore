@@ -1,0 +1,6 @@
+__pycache__
+.venv
+.~lock.*
+tmp
+config_datei.yaml
+Kicktipp
