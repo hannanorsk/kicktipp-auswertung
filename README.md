@@ -87,3 +87,12 @@ Das dritte Tabellenblatt enthält die Begegnungen des nächsten Spieltages.
 |5|Tipper2| Tipper8|
 |...|...|...|
 
+# Setup
+
+* Python 3
+
+* venv erstellen: https://docs.python.org/3/library/venv.html --> `python3 -m venv .venv`
+
+* in venv wechseln: `source .venv/bin/activate`
+        
+  * requirements.txt installieren: `pip install -r requirements.txt`
