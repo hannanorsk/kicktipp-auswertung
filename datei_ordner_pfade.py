@@ -1,4 +1,5 @@
 import os
+import hilfsfunktionen
 
 
 def eingabe_ordner_anlegen(kicktipp_pfad, eingabe_ordner, jahr):
@@ -23,6 +24,6 @@ def ausgabe_ordner_anlegen(kicktipp_pfad, ausgabe_ordner, jahr):
     if not os.path.exists(kicktipp_pfad):
         raise FileNotFoundError("Der Kicktipp-Ordner "+kicktipp_pfad+" existiert nicht. Bitte den Ordner anlegen oder in der config_datei einen einstellen, der existiert.")
     
-    ordner_pfad_zu_auswertungsdatei = os.path.join(kicktipp_pfad, ausgabe_ordner, str(jahr)) 
+    ordner_pfad_zu_auswertungsdatei = hilfsfunktionen.ordner_pfad_auswertungsdatei(kicktipp_pfad, ausgabe_ordner, jahr)
     if not os.path.exists(ordner_pfad_zu_auswertungsdatei):
         os.makedirs(ordner_pfad_zu_auswertungsdatei)

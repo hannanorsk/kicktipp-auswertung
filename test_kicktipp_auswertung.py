@@ -4,12 +4,26 @@ from pandas.testing import assert_frame_equal
 import auswertung
 import spieltagsfunktion
 import os
+import hilfsfunktionen
+import constants
+import datei_ordner_pfade
+
+
+kicktipp_pfad = 'test'        
+jahr =2021
+ausgabe_ordner = constants.unterordner_output
+
 
 
 class TestKicktippAuswertung(unittest.TestCase):
+    def setUpClass():
+        datei_ordner_pfade.ausgabe_ordner_anlegen(kicktipp_pfad, constants.unterordner_output, jahr)
+
+
     def tearDownClass():
         os.remove(TestKicktippAuswertung.pfad_ausgegebenes_Excel(1, 2021))
         os.remove(TestKicktippAuswertung.pfad_ausgegebenes_Excel(2, 2021))
+        os.rmdir(hilfsfunktionen.ordner_pfad_auswertungsdatei(kicktipp_pfad, ausgabe_ordner, jahr))
     
 
     def test_kicktipp_auswertung_excel1(self):
@@ -17,8 +31,6 @@ class TestKicktippAuswertung(unittest.TestCase):
         Diese Funktion testet, ob die Auswertung für den ersten Spieltag stimmt.
         '''
         spieltag = 1
-        jahr =2021
-        kicktipp_pfad = 'test'
 
         auswertung.erstelle_auswertungsdatei_spieltag_1(jahr=jahr, kicktipp_ordner=kicktipp_pfad)
         erwartetes_Ergebnis = self.erwartetes_Ergebnis_Sheet(spieltag, 'Tabelle')
@@ -32,8 +44,6 @@ class TestKicktippAuswertung(unittest.TestCase):
         Diese Funktion testet, ob die Auswertung für den zweiten Spieltag stimmt.
         '''
         spieltag = 2
-        jahr =2021
-        kicktipp_pfad = 'test'
         xlsx_path_vorwoche = os.path.join('test', 'erwartetes_Ergebnis', 'Kicktipp_Auswertung_Spieltag1.xlsx')
 
         auswertung.erstelle_auswertungsdatei_ab_spieltag_2(spieltag, jahr=jahr, xlsx_path_vorwoche=xlsx_path_vorwoche, kicktipp_pfad=kicktipp_pfad)
@@ -61,7 +71,6 @@ class TestKicktippAuswertung(unittest.TestCase):
         return pd.read_excel(io=TestKicktippAuswertung.pfad_ausgegebenes_Excel(spieltag, jahr), sheet_name=sheet_Name)
 
     def pfad_ausgegebenes_Excel(spieltag, jahr):
-        kicktipp_pfad = 'test'
 
         return auswertung.path_auswertungsdatei(kicktipp_pfad, jahr=jahr, spieltag=spieltag)
 

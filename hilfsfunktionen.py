@@ -1,5 +1,5 @@
 import pandas as pd
-
+import os
 
 def excel_to_dataframe(xlsx_path, sheet_name):
     '''
@@ -16,4 +16,8 @@ def csv_to_dataframe(csv_path):
 
     df = pd.read_csv(csv_path)
     return df
+
+def ordner_pfad_auswertungsdatei(kicktipp_pfad, ausgabe_ordner, jahr):
+    ordner_pfad_zu_auswertungsdatei = os.path.join(kicktipp_pfad, ausgabe_ordner, str(jahr))
+    return ordner_pfad_zu_auswertungsdatei
 
