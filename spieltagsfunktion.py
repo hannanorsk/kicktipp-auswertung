@@ -217,7 +217,7 @@ def gesamtpunktberechnung_inkl_vorwoche(spieltag, kicktipp_pfad, jahr, xlsx_path
 
 
 def rang_berechnung_aktueller_spieltag(tabelle_gesamtpunkte):
-    tabelle_sortiert = tabelle_gesamtpunkte.sort_values(by=['Punkte','Tore','Tordifferenz'], ascending=False, ignore_index= True)
+    tabelle_sortiert = tabelle_gesamtpunkte.sort_values(by=['Punkte','Tordifferenz','Tore'], ascending=False, ignore_index= True)
 
     rang_liste = [1]
     previous_row = tabelle_sortiert[['Punkte','Tore','Tordifferenz']].iloc[0]
