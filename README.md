@@ -54,7 +54,7 @@ Die Kicktipppunkte werden als Tore gewertet und daraus wird die Tordifferenz ber
 | Tipper8| TSG 1899 Hoffenheim|18|3|18|18-11|
 |...|...|...|...|...|...|
 
-Die Tabelle wird anhand der Punkte, Tore, Tordifferenz (Gewichtung in absteigender Reihenfolge) erstellt. Bei Gleichstand von Punkten, Toren und Tordifferenz werden die Platzierungen geteilt.
+Die Tabelle wird anhand der Punkte, Tordifferenz, Tore (Gewichtung in absteigender Reihenfolge) erstellt. Bei Gleichstand von Punkten, Tordifferenz und Toren werden die Platzierungen geteilt.
 
 | Tipper | Bundesligist |Kicktipppunkte|Punkte|Tore|Tordifferenz|Platzierung|
 | -------| ------------ |-----|---|----|----|---|
